@@ -16,7 +16,7 @@ const handleRequest = (res, filePath, statusCode = 200) => {
 app.get("/", (_, res) => handleRequest(res, "index.html"));
 app.get("/about", (_, res) => handleRequest(res, "pages/about.html"));
 app.get("/contact-me", (_, res) => handleRequest(res, "pages/contact-me.html"));
-app.get("*", (_, res) => handleRequest(res, "pages/404.html", 404));
+app.get("/*splat", (_, res) => handleRequest(res, "pages/404.html", 404));
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (error) => {
